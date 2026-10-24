@@ -1,12 +1,17 @@
-/* =========================
-   MODERN PREMIUM DASHBOARD
-========================= */
 
+/* =====================================
+   PERSONAL BUDGET TRACKER
+   MODERN PREMIUM DASHBOARD
+===================================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+
+/* Color Palette */
 :root {
     --bg: #f3f7f4;
     --bg-soft: #edf6ef;
-    --panel: rgba(255, 255, 255, 0.9);
-    --panel-strong: #ffffff;
+    --panel: #ffffff;
     --border: rgba(16, 37, 31, 0.08);
     --sidebar: #0d2b25;
     --sidebar-alt: #123f35;
@@ -18,9 +23,10 @@
     --success: #1aa76c;
     --warning: #f2b94b;
     --danger: #ea6a52;
-    --shadow: 0 18px 45px rgba(10, 28, 22, 0.12);
+    --shadow: 0 18px 45px rgba(10, 28, 22, 0.08);
 }
 
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -32,31 +38,36 @@ html {
 }
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: 'DM Sans', sans-serif;
     background:
         radial-gradient(circle at top left, rgba(40, 120, 89, 0.12), transparent 30%),
         linear-gradient(135deg, #f4f8f5 0%, #ecf2ee 100%);
     color: var(--text);
+    line-height: 1.6;
 }
 
-button,
-input,
-select {
+h1, h2, h3, h4 {
+    font-family: 'Outfit', sans-serif;
+}
+
+button, input, select, textarea {
     font: inherit;
 }
 
+/* Main Dashboard */
 .dashboard {
     display: flex;
     min-height: 100vh;
 }
 
-/* =========================
+/* =====================================
    SIDEBAR
-========================= */
+===================================== */
 
 .sidebar {
     width: 280px;
-    background: linear-gradient(180deg, var(--sidebar) 0%, #0d281f 100%);
+    flex-shrink: 0;
+    background: linear-gradient(180deg, var(--sidebar), #0d281f);
     color: white;
     padding: 26px 22px 20px;
     display: flex;
@@ -209,7 +220,7 @@ nav {
     display: block;
     width: 58%;
     height: 100%;
-    background: linear-gradient(90deg, #4ade80 0%, #90f7b8 100%);
+    background: linear-gradient(90deg, #4ade80, #90f7b8);
     border-radius: inherit;
 }
 
@@ -260,9 +271,9 @@ nav {
     color: #15513d;
 }
 
-/* =========================
+/* =====================================
    MAIN CONTENT
-========================= */
+===================================== */
 
 .main-content {
     flex: 1;
@@ -280,8 +291,7 @@ nav {
 
 .topbar h1 {
     font-size: clamp(2rem, 2.5vw, 2.5rem);
-    margin-bottom: 8px;
-    color: #0f2e2d;
+    color: var(--text);
 }
 
 .topbar p,
@@ -308,6 +318,7 @@ nav {
     box-shadow: 0 10px 22px rgba(16, 37, 31, 0.03);
 }
 
+/* Buttons */
 .ghost-btn,
 .primary-btn,
 .reset-btn,
@@ -320,7 +331,7 @@ nav {
 
 .ghost-btn,
 .reset-btn {
-    background: rgba(255,255,255,0.9);
+    background: white;
     color: #1a2d2d;
     border: 1px solid var(--border);
     padding: 11px 16px;
@@ -329,7 +340,7 @@ nav {
 
 .primary-btn,
 .submit-btn {
-    background: linear-gradient(135deg, var(--primary) 0%, #1d8d64 100%);
+    background: linear-gradient(135deg, var(--primary), #1d8d64);
     color: white;
     padding: 11px 18px;
     box-shadow: 0 12px 25px rgba(22, 107, 79, 0.22);
@@ -340,12 +351,13 @@ nav {
 .primary-btn:hover,
 .reset-btn:hover,
 .submit-btn:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(22, 107, 79, 0.15);
 }
 
-/* =========================
+/* =====================================
    SECTION HEADINGS
-========================= */
+===================================== */
 
 .overview,
 .content-section {
@@ -365,9 +377,9 @@ nav {
     color: var(--text);
 }
 
-/* =========================
+/* =====================================
    SUMMARY CARDS
-========================= */
+===================================== */
 
 .summary-cards {
     display: grid;
@@ -376,9 +388,9 @@ nav {
 }
 
 .summary-card {
-    background: rgba(255,255,255,0.82);
+    background: rgba(255,255,255,0.88);
     border: 1px solid var(--border);
-    padding: 22px 22px 20px;
+    padding: 22px;
     border-radius: 20px;
     box-shadow: var(--shadow);
     transition: transform 0.22s ease, box-shadow 0.22s ease;
@@ -432,7 +444,7 @@ nav {
 }
 
 .balance-card {
-    background: linear-gradient(135deg, #0f4e3d 0%, #1a7159 100%);
+    background: linear-gradient(135deg, #0f4e3d, #1a7159);
     color: white;
     border-color: transparent;
 }
@@ -447,9 +459,9 @@ nav {
     color: white;
 }
 
-/* =========================
+/* =====================================
    INSIGHTS
-========================= */
+===================================== */
 
 .insights-grid {
     display: grid;
@@ -459,10 +471,10 @@ nav {
 }
 
 .insight-panel {
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.88);
     border: 1px solid var(--border);
     border-radius: 20px;
-    padding: 20px 20px 18px;
+    padding: 20px;
     box-shadow: var(--shadow);
 }
 
@@ -530,11 +542,11 @@ nav {
 }
 
 .bar.income {
-    background: linear-gradient(180deg, #1ab97a 0%, #75e1b2 100%);
+    background: linear-gradient(180deg, #1ab97a, #75e1b2);
 }
 
 .bar.expense {
-    background: linear-gradient(180deg, #f4a261 0%, #f6c79a 100%);
+    background: linear-gradient(180deg, #f4a261, #f6c79a);
 }
 
 .ring-wrap {
@@ -594,13 +606,13 @@ nav {
     font-size: 0.76rem;
 }
 
-/* =========================
-   FORM CARD
-========================= */
+/* =====================================
+   EXPENSE FORM CARD
+===================================== */
 
 .form-card,
 .table-card {
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.88);
     border: 1px solid var(--border);
     border-radius: 20px;
     box-shadow: var(--shadow);
@@ -610,7 +622,14 @@ nav {
     padding: 24px;
 }
 
-.form-grid {
+.form-card h2,
+.table-card h2 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text);
+    margin-bottom: 18px;
+}
+
+form {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
@@ -623,13 +642,14 @@ nav {
 }
 
 .form-group label {
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-weight: 700;
     color: #45606d;
 }
 
-.form-group input,
-.form-group select {
+input,
+select,
+textarea {
     width: 100%;
     border-radius: 12px;
     border: 1px solid #dfe8e2;
@@ -637,12 +657,16 @@ nav {
     padding: 13px 14px;
     outline: none;
     color: var(--text);
+    font-family: 'DM Sans', sans-serif;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-group input:focus,
-.form-group select:focus {
-    border-color: rgba(22, 107, 79, 0.7);
+.form-group select:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
     box-shadow: 0 0 0 4px rgba(22, 107, 79, 0.1);
 }
 
@@ -651,11 +675,12 @@ nav {
     justify-content: flex-end;
     gap: 12px;
     margin-top: 24px;
+    grid-column: 1 / -1;
 }
 
-/* =========================
+/* =====================================
    TRANSACTION TABLE
-========================= */
+===================================== */
 
 .table-card {
     overflow: hidden;
@@ -667,22 +692,34 @@ nav {
     min-width: 620px;
 }
 
-th {
-    background: #f6faf7;
-    color: #728996;
-    font-size: 0.72rem;
+.table-card th {
+    background: #0d2b25;
+    color: white;
+    font-size: 0.78rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
     text-align: left;
     padding: 16px 18px;
     border-bottom: 1px solid #edf2ee;
 }
 
-td {
+.table-card td {
     padding: 16px 18px;
     border-bottom: 1px solid #edf2ee;
     color: var(--text);
     font-size: 0.92rem;
+}
+
+.table-card tbody tr:nth-child(even) {
+    background: #f1f8f5;
+}
+
+.table-card tbody tr:nth-child(odd) {
+    background: white;
+}
+
+.table-card tbody tr:hover {
+    background: #e3f4e9;
 }
 
 .amount {
@@ -707,7 +744,12 @@ td {
     color: var(--primary);
     font-size: 0.82rem;
     font-weight: 700;
+    text-decoration: none;
 }
+
+/* =====================================
+   FOOTER
+===================================== */
 
 footer {
     text-align: center;
@@ -716,9 +758,9 @@ footer {
     font-size: 0.8rem;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
 
 @media (max-width: 1000px) {
     .dashboard {
@@ -754,7 +796,7 @@ footer {
         width: 100%;
     }
 
-    .form-grid {
+    form {
         grid-template-columns: 1fr;
     }
 
@@ -770,5 +812,13 @@ footer {
     nav {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .table-card {
+        overflow-x: auto;
+    }
+
+    .budget-meta {
+        flex-direction: column;
     }
 }
