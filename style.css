@@ -1,0 +1,493 @@
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #1e293b;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 250px;
+    background: #10251f;
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 55px;
+}
+
+.logo h2 {
+    font-size: 23px;
+    letter-spacing: 0.5px;
+}
+
+.logo-icon {
+    background: #16a36a;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.menu-title {
+    font-size: 11px;
+    color: #8ba59a;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #b8c9c1;
+    padding: 14px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s;
+}
+
+.nav-link span {
+    font-size: 19px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #1b4938;
+    color: white;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding-top: 30px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid #345347;
+    padding-top: 20px;
+}
+
+.profile strong,
+.profile small {
+    display: block;
+}
+
+.profile strong {
+    font-size: 13px;
+}
+
+.profile small {
+    color: #a6b8ae;
+    margin-top: 5px;
+}
+
+/* =========================
+   AVATAR
+========================= */
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    background: #d9f5e7;
+    color: #12633e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    flex: 1;
+    padding: 35px 45px;
+    min-width: 0;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.topbar h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.topbar p,
+.section-heading p {
+    color: #84909f;
+    font-size: 14px;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.date {
+    background: white;
+    padding: 12px 18px;
+    border: 1px solid #e5e9ef;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+.overview,
+.content-section {
+    margin-bottom: 35px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+/* =========================
+   SUMMARY CARDS
+========================= */
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.summary-card {
+    background: white;
+    padding: 25px;
+    border: 1px solid #e9edf2;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(20, 40, 30, 0.03);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #718096;
+    font-size: 14px;
+}
+
+.card-icon {
+    background: #e5f7ee;
+    color: #16a36a;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.income-icon {
+    background: #e5f7ee;
+    color: #16a36a;
+}
+
+.expense-icon {
+    background: #fff0ed;
+    color: #e66a52;
+}
+
+.summary-card h2 {
+    font-size: 26px;
+    margin: 20px 0 8px;
+}
+
+.summary-card p {
+    font-size: 12px;
+    color: #8b97a6;
+}
+
+.balance-card {
+    background: #146c49;
+    color: white;
+}
+
+.balance-card .card-top,
+.balance-card p {
+    color: #d4eee0;
+}
+
+.balance-card .card-icon {
+    background: #ffffff25;
+    color: white;
+}
+
+/* =========================
+   EXPENSE FORM
+========================= */
+
+.form-card,
+.table-card {
+    background: white;
+    border: 1px solid #e9edf2;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 3px 12px rgba(20, 40, 30, 0.03);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #344054;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dce2e9;
+    border-radius: 7px;
+    outline: none;
+    font-size: 14px;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #16a36a;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.reset-btn,
+.submit-btn {
+    padding: 12px 20px;
+    border-radius: 7px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.reset-btn {
+    background: white;
+    border: 1px solid #dce2e9;
+    color: #344054;
+}
+
+.submit-btn {
+    background: #146c49;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    background: #10563a;
+}
+
+/* =========================
+   TRANSACTIONS TABLE
+========================= */
+
+.table-card {
+    padding: 0;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 550px;
+}
+
+th {
+    text-align: left;
+    padding: 18px;
+    font-size: 12px;
+    color: #82909e;
+    background: #f9fafb;
+    font-weight: 600;
+}
+
+td {
+    padding: 18px;
+    border-top: 1px solid #edf0f3;
+    font-size: 13px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 45px 15px;
+}
+
+.empty-icon {
+    font-size: 35px;
+    color: #16a36a;
+    margin-bottom: 12px;
+}
+
+.empty-state strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.empty-state p {
+    color: #929eaa;
+    font-size: 13px;
+}
+
+.view-all {
+    color: #168657;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 25px 0;
+    color: #929eaa;
+    font-size: 12px;
+    border-top: 1px solid #e9edf2;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1000px) {
+    .main-content {
+        padding: 30px 25px;
+    }
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .logo {
+        margin-bottom: 25px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nav-link {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .main-content {
+        padding: 25px 15px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .topbar h1 {
+        font-size: 24px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card {
+        padding: 18px;
+    }
+
+    .form-actions {
+        flex-wrap: wrap;
+    }
+}
